@@ -1,3 +1,10 @@
+merge_ics 2.0 (2015-04-17)
+==========================
+
+* Forked from https://code.google.com/p/merge-ics/
+* Added config file
+* Hacked together a php wrapper to perform merging on the fly to server calendar clients
+
 merge_ics 1.6 (2007-07-09)
 ==========================
 

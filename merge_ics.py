@@ -1,34 +1,35 @@
 #!/usr/bin/python
 #
-#      merge_ics.py: This script will get all .ics files (iCalendar files, as
-#                    specified in the RFC 2445 specification), read it and
-#                    aggregate all events to a new .ics file. If one of the
-#                    sourcefiles is not readable (or is not RFC 2445 compatible),
-#                    it will be ignored.
+#      merge_ics.py:        This script will get all .ics files (iCalendar files, as
+#                           specified in the RFC 2445 specification), read it and
+#                           aggregate all events to a new .ics file. If one of the
+#                           sourcefiles is not readable (or is not RFC 2445 compatible),
+#                           it will be ignored.
+# 
+#      Original Author:     Thomas Deutsch <thomas@tuxpeople.org>
+#      Current Maintainer:  Jeff Vogt (http://github.com/jvogt)
 #
-#      Copyright:    (C) 2007 by Thomas Deutsch <thomas@tuxpeople.org>
-#
-#      Version:      1.6(2007-07-09)
-#
-#      License:      GPL v2
-#
-#                    This program is free software; you can redistribute it and/or modify
-#                    it under the terms of the GNU General Public License as published by
-#                    the Free Software Foundation; either version 2 of the License, or
-#                    (at your option) any later version.
-#
-#                    This program is distributed in the hope that it will be useful, but
-#                    WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-#                    or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
-#                    for more details.
-#
-#                    You should have received a copy of the GNU General Public License along
-#                    with this program; if not, write to the Free Software Foundation, Inc.,
-#                    51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA 
-#
-#      Usage:        This script is made to be started by hand or as a cronjob.
-#                    It needs no parameters or options, but you should configure
-#                    the variables in the script before you run it ;)
+#      Version:             2.0(2015-04-17)
+#       
+#      License:             GPL v2
+#       
+#                           This program is free software; you can redistribute it and/or modify
+#                           it under the terms of the GNU General Public License as published by
+#                           the Free Software Foundation; either version 2 of the License, or
+#                           (at your option) any later version.
+#       
+#                           This program is distributed in the hope that it will be useful, but
+#                           WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+#                           or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+#                           for more details.
+#       
+#                           You should have received a copy of the GNU General Public License along
+#                           with this program; if not, write to the Free Software Foundation, Inc.,
+#                           51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA 
+#       
+#      Usage:               This script is made to be started by hand or via the php wrapper.
+#                           It needs no parameters or options, but you should configure
+#                           the variables in the config file before you run it ;)
 
 from config import *
 #############################
