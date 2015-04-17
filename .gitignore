@@ -1,2 +1,5 @@
 .DS_Store
 ._*
+config.py
+config.php
+*.pyc

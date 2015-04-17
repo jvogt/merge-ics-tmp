@@ -1,14 +1,22 @@
 <?php
+include 'config.php';
 $date = new DateTime();
 $ts = $date->getTimestamp();
-$workdir = '/var/www/izzl.org/caltest/work';
+$work_dir = "{$install_dir}/work";
 function getfile($url,$tempname,$finalname) {
-	exec("wget ${url} -O /tmp/${tempname}-${finalname}",$output,$retval);
+	global $work_dir;
+	$_finalname = "{$work_dir}/cals/{$finalname}";
+	$_tempname = "/tmp/${tempname}-${finalname}";
+	$cmd = "wget ${url} -O {$_tempname}";
+	exec($cmd,$output,$retval);
 	if($retval == 0) {
-		
-$thisworkdir = "{$workdir}/{$ts}';
-mkdir($thisworkdir);
-system('wget);
-$cal = file_get_contents('/var/www/izzl.org/caltest/cal.ics');
+		rename("{$_tempname}","{$_finalname}");
+	}
+}
+foreach($files as $file) {
+	getfile($file[1],$ts,$file[0]);
+}
+exec("{$install_dir}/merge_ics.py");
+$cal = file_get_contents("{$work_dir}/cal.ics");
 echo $cal;
 ?>
